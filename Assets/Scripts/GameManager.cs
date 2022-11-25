@@ -9,7 +9,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
+    [SerializeField] private GameObject Hundido;
     [SerializeField] private AudioMixer audioMixer;
 
 
@@ -42,5 +42,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Exit...");
         Application.Quit();
+    }
+
+    public void ShowGameOverScreen()
+    {
+        Hundido.SetActive(true);
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
 }

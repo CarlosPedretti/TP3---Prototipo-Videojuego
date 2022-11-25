@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SinkingShip : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class SinkingShip : MonoBehaviour
     [SerializeField] public GameObject floater4;
     [SerializeField] public GameObject floater5;
     [SerializeField] public GameObject Ship;
+
+    [SerializeField] public TMP_Text Hundido;
 
     public PosibleBarquito scriptPosibleBarquito;
 
@@ -38,6 +41,8 @@ public class SinkingShip : MonoBehaviour
             Destroy(Ship, 20);
 
             scriptPosibleBarquito.enabled = false;
+
+            Hundido.gameObject.SetActive(true);
 
         }
     }
